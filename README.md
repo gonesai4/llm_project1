@@ -1,10 +1,16 @@
+# folder name in git-workspace folder is assistant_api_demo and git repo name is llm_project1
+
 # Fast API
 
 ```
+#install below modules first
 pip install "fastapi[all]"
 pip install openapi
 uvicorn main:app --reload           this command only for dev env 
 fastapi dev main.py --reload        this is for production env
+
+# we added __main__ method in main.py script so we can run using commandline also like below
+
 python .\main.y             using python command to run
 ```
 
