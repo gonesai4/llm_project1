@@ -36,13 +36,13 @@ pipeline {
                         script {
                             sh returnStatus: true, script: 'docker stop $(docker ps -a | grep ${env.registry} | awk \'{print $1}\')'
                             sh returnStatus: true, script: 'docker run -d -p 80:80 -e OPENAI_API_KEY="${KEY}" ${img}'
-                            //cont = docker.image("${img}").run("OPENAI_API_KEY=${KEY} -p 80:80 ")
+                            //cont = docker.image("${img}").run("-p 80:80")
                             // sleep (100)
                         }
                     }
             }
 
-            /*stage('Release') {
+            stage('Release') {
               steps {
                   echo 'Distribute Image to the Docker Hub'
                   script {
@@ -52,6 +52,6 @@ pipeline {
                       }
                   }
               }
-            }*/
+            }
          }
 }
