@@ -35,7 +35,7 @@ pipeline {
                         echo 'Deploy Container'
                         script {
                             sh returnStatus: true, script: 'docker stop $(docker ps -a | grep ${env.registry} | awk \'{print $1}\')'
-                            cont = docker.image("${img}").run("-p 80:80, OPENAI_API_KEY=${KEY}")
+                            cont = docker.image("${img}").run("OPENAI_API_KEY=${KEY} -p 80:80 ")
                             // sleep (100)
                         }
                     }
