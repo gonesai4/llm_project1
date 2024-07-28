@@ -21,6 +21,8 @@ $env:OPENAI_API_KEY = 'dssgfasghsd'
 
 
 ```
+with using docker steps 
+
 #clone this repo in ec2-instance and then run below commands
 git clone https://github.com/gonesai4/llm_project1.git
 cd llm_project1
