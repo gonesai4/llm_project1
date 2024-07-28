@@ -25,7 +25,9 @@ pipeline {
                             echo 'Build Docker Image using Docker file'
                             // docker build -t flaskapp:v1 .
                             script {
-                              dockerImg = docker.build("${img}")
+                              //dockerImg = docker.build("${img}")
+                              sh returnStatus: true, script: 'docker-compose up'
+
                             }
                         }
             }
