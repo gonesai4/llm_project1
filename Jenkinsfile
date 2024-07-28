@@ -14,7 +14,8 @@ pipeline {
             stage('Checkout Code') {
                         steps {
                             echo 'Checkout Code'
-                            git 'https://github.com/gonesai4/llm_project1.git'
+                            //git 'https://github.com/gonesai4/llm_project1.git'
+                            git branch: 'main', credentialsId: 'Git-credentials', url: 'https://github.com/gonesai4/llm_project1.git'
                             sh 'ls -l'
                         }
             }
