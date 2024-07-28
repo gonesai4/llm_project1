@@ -30,18 +30,18 @@ pipeline {
                         }
             }
 
-            /*stage('Deploy Container') {
+            stage('Deploy Container') {
                     steps {
                         echo 'Deploy Container'
                         script {
                             sh returnStatus: true, script: 'docker stop $(docker ps -a | grep ${env.registry} | awk \'{print $1}\')'
-                            cont = docker.image("${img}").run("-p 80:80")
+                            cont = docker.image("${img}").run("-p 80:80 OPENAI_API_KEY=${KEY}")
                             // sleep (100)
                         }
                     }
             }
 
-            stage('Release') {
+            /*stage('Release') {
               steps {
                   echo 'Distribute Image to the Docker Hub'
                   script {
